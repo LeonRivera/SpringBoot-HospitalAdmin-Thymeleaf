@@ -60,9 +60,9 @@
 						<tr th:each="cita : ${citas}">
 							<td th:text="${cita.id}"></td>
 							<td th:text="${cita.nombreDelPaciente}"></td>
-							<td th:text="${cita.consultorio.numeroConsultorio}"></td> -->
+							<td th:text="${cita.consultorio.numeroConsultorio}"></td> 
 							<td th:text="${cita.doctor.nombre}"></td>
-							<td th:text="${cita.horarioConsulta}"></td>
+							<td th:text="${#dates.format(cita.horarioConsulta, 'yyyy-MM-dd HH:mm')}"></td>
 							<td><a class="btn btn-warning" th:href="@{/editar/} + ${cita.id}">Editar</a></td>
 							 <td><a class="btn btn-danger" th:href="@{/eliminar(id=${cita.id})}">Eliminar</a></td>
 

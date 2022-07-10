@@ -63,13 +63,15 @@ public class CitaController {
     public String editar(Cita cita, Model model){
         cita = citaService.findById(cita.getId());
         model.addAttribute("cita",cita );
+
+
         List<Doctor> doctores =  doctorService.findAll();
         List<Consultorio> consultorios = consultorioService.findAll();
         model.addAttribute("doctores", doctores );
         model.addAttribute("consultorios", consultorios );
         
 
-        return "modificar";
+        return "agregar";
     }
 
     @GetMapping("/eliminar")
